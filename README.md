@@ -9,6 +9,13 @@ The goal is to create a rich and flexible UI, enabling users to rapidly develop 
 
 Pull the repo from the "release" branch; version 1.4 will be tagged as banana-1.4.
 
+## Worked list
+1. Add stats panel by hits(for statistics) : ./src/app/panels/stats/  
+2. Modify number to fixed to the third digit after the decimal point only for mean : ./src/app/panels/terms/    
+3. Modify number to fixed to the third digit after the decimal point by this.numberToFixed function : ./src/app/services/dashboard.js  
+4. Checked undefined and null by grid panel : ./src/vendor/jquery/jquery.flot.pie.js  
+5. Modified timout to five second from a second : ./src/vendor/require/require.js  
+
 ## Banana 1.4: Released on 15 September 2014
 
 Banana 1.4 contains many new features, new panels, enhancements and bug fixes to improve the overall user experience and stability. Thank you to our growing community for your suggestions and contributions! Please continue sending us your feedbacks, so that we can further extend and improve Banana!
