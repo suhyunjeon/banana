@@ -622,8 +622,10 @@ var requirejs, require, define;
 
         function checkLoaded() {
             var map, modId, err, usingPathFallback,
-            waitInterval = config.waitSeconds * 1000,
+//            waitInterval = config.waitSeconds * 1000,
+            waitInterval = config.waitSeconds * 5000,
                 //It is possible to disable the wait interval by using waitSeconds of 0.
+            	  // Appended timeout 2015.02.09 패널이 많은 대쉬보드일 경우, timeout 이 걸려 중간에 로딩이 되지 않는다. 이를 해결하기 위해 timeout 의 시간을 늘려준다.  
                 expired = waitInterval && (context.startTime + waitInterval) < new Date().getTime(),
                 noLoads = [],
                 reqCalls = [],
