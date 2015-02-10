@@ -223,6 +223,11 @@ function (angular, app, _, $, kbn) {
           });
         }
 
+        // Modify number to fixed to the third digit after the decimal point only for mean. 2015.02.10
+        if ($scope.panel.mode === 'mean') {
+            $scope.panel.decimal_points = 3;
+        }
+
         // Sort the results
         if ($scope.panel.order == 'descending') {
           $scope.data = _.sortBy($scope.data, function(d) {return -d.data[0][1];});

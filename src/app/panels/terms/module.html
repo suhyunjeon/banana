@@ -72,11 +72,7 @@
     <tbody ng-style="{height: row.height}">
     <tr ng-repeat="term in data" ng-show="showMeta(term)">
       <td>{{term.label}}</td>
-      <!-- mean 일 경우에만 소수점 3자리까지 뿌려주도록 설정한다.  -->
-      <!-- <td>{{term.data[0][1].toFixed(panel.decimal_points)}}</td> -->
-      <td ng-show="panel.mode == 'mean'">{{dashboard.numberToFixed(term.data[0][1])}}</td>
-      <td ng-show="panel.mode != 'mean'">{{term.data[0][1].toFixed(panel.decimal_points)}}</td>
-      
+      <td>{{term.data[0][1].toFixed(panel.decimal_points)}}</td>
       <td>
         <span ng-hide="term.meta == 'other'">
           <i class='icon-search pointer' ng-click="build_search(term)"></i>
