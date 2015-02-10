@@ -655,18 +655,19 @@ More detail and specific examples can be found in the included HTML file.
 			var canvasY =  parseInt(e.pageY - offset.top);
 			var item = findNearbySlice(canvasX, canvasY);
 
-			if (options.grid.autoHighlight) {
-
-				// clear auto-highlights
-
-				for (var i = 0; i < highlights.length; ++i) {
-					var h = highlights[i];
-					if (h.auto == eventname && !(item && h.series == item.series)) {
-						unhighlight(h.series);
+			// checked undefined value for autoHighlight (Cannot read property 'autoHighlight' of undefined)
+			if (undefined != options.grid) {
+				if (options.grid.autoHighlight) {
+	
+					// clear auto-highlights
+					for (var i = 0; i < highlights.length; ++i) {
+						var h = highlights[i];
+						if (h.auto == eventname && !(item && h.series == item.series)) {
+							unhighlight(h.series);
+						}
 					}
 				}
-			}
-
+			} 			
 			// highlight the slice
 
 			if (item) {
@@ -676,7 +677,11 @@ More detail and specific examples can be found in the included HTML file.
 			// trigger any hover bind events
 
 			var pos = { pageX: e.pageX, pageY: e.pageY };
-			target.trigger(eventname, [pos, item]);
+			
+			// checked null value for trigger 
+			if (target) {
+				target.trigger(eventname, [pos, item]);	
+			}
 		}
 
 		function highlight(s, auto) {
