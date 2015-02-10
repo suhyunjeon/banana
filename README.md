@@ -4,17 +4,18 @@ The Banana project was forked from Kibana, and works with all kinds of time seri
 
 The goal is to create a rich and flexible UI, enabling users to rapidly develop end-to-end applications that leverage the power of Apache Solr. Data can be ingested into Solr through a variety of ways, including LogStash, Flume and other connectors.
 
- 
-## IMPORTANT
 
-Pull the repo from the "release" branch; version 1.4 will be tagged as banana-1.4.
-
-## Worked list
-1. Add stats panel by hits(for statistics) : ./src/app/panels/stats/  
-2. Modify number to fixed to the third digit after the decimal point only for mean : ./src/app/panels/terms/    
-3. Modify number to fixed to the third digit after the decimal point by this.numberToFixed function : ./src/app/services/dashboard.js  
+## Worked List ( last 2015.02.10 )
+1. Added stats panel by hits(for statistics) : ./src/app/panels/stats/  
+2. Modified number to fixed to the third digit after the decimal point only for mean : ./src/app/panels/terms/    
+3. Modified number to fixed to the third digit after the decimal point by this.numberToFixed function : ./src/app/services/dashboard.js  
 4. Checked undefined and null by grid panel : ./src/vendor/jquery/jquery.flot.pie.js  
 5. Modified timout to five second from a second : ./src/vendor/require/require.js  
+
+
+ 
+## IMPORTANT
+Pull the repo from the "release" branch; version 1.4 will be tagged as banana-1.4.
 
 ## Banana 1.4: Released on 15 September 2014
 
