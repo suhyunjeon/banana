@@ -11,10 +11,10 @@ define([
 function (angular, $, kbn, _, config, moment, Modernizr) {
   'use strict';
 
-  var DEBUG = false; // DEBUG mode
+  var DEBUG = true; // DEBUG mode
 
   var module = angular.module('kibana.services');
-
+  
   module.service('dashboard', function($routeParams, $http, $rootScope, $injector, $location,
     sjsResource, timer, kbnIndex, alertSrv
   ) {
@@ -128,7 +128,14 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
           alertSrv.set('No collections','There were no collections returned from Solr.','info',5000);
         }
       });
-
+      /*
+      var connected = $http.post('/sessionCheck');
+		connected.then(function(msg){
+			console.log("msg.data.result : "+msg.data.result);
+			//if(msg.data=="false")$location.path('/login');
+			if(msg.data.result!="200")window.location.href="index.html";
+		});
+      */
       if(self.current.index.interval !== 'none') {
         if(filterSrv.idsByType('time').length > 0) {
           var _range = filterSrv.timeRange('min');
@@ -469,12 +476,20 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
     };
 
     this.numberWithCommas = function(x) {
-      if (x)
+      if (x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      else
+      } else {
         return x;
+       }
     }
-
+    
+    this.numberToFixed = function(x) {
+        if (x) {
+        	return x.toFixed(3);	
+        } else {
+        	return x;	
+        }
+     }
   });
 
 });
