@@ -73,7 +73,7 @@ function (Settings) {
       'stats',	
       'fullTextSearch',
       'tagcloud',
-      'multiseries
+      'multiseries'
       // 'dummy'  // Dummy module for testing
     ]
   });
