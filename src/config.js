@@ -71,7 +71,9 @@ function (Settings) {
       'heatmap',
       'scatterplot',
       'stats',	
-      'fullTextSearch'
+      'fullTextSearch',
+      'tagcloud',
+      'multiseries
       // 'dummy'  // Dummy module for testing
     ]
   });
