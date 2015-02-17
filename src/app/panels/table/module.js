@@ -312,6 +312,11 @@ function (angular, app, _, kbn, moment) {
 
           if (DEBUG) { console.debug('\tnot sorting in reverse chrono order!'); }
         }
+        
+        // When I try to search data, table paging is not refresh in the query panel. 
+        if($scope.data.length < $scope.panel.size) {
+        	$scope.panel.offset = 0
+        }
 
       });
     };
